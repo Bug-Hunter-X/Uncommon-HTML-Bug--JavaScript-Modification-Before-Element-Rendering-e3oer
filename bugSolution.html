@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    // Correctly using innerHTML to set content. The script
+    // is now placed after the <div> element, ensuring it
+    // exists when the script runs.
+    document.getElementById('myDiv').innerHTML = "<p>This text will replace the existing content.</p>";
+  </script>
+</body>
+</html>
