@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    // Incorrectly using innerHTML to set content to an element
+    // that doesn't exist yet.
+    document.getElementById('myDiv').innerHTML = "<p>This text will replace the existing content.</p>";
+
+    // The bug is that this script executes *before* the <div>
+    // with id="myDiv" has been parsed and rendered. Thus, it will
+    // not find the element and result in an error in some browsers.
+  </script>
+</body>
+</html>
